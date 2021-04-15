@@ -4,11 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
     <title>BlogDeCafe</title>
+    <!--Prefetch permite cargar la siguiente pagina de manera mas rapida-->
+    <link rel="prefetch" href="nosotros.html" as="document">
+
+    <!--Preload permite cargar los datos necesarios lo mas pronto posible-->
+    <!--preload a normalize-->
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+    <!--preload a la hoja de estilo-->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+    <!--preload a la fuente de texto-->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" crossorigin="crossorigin" as="font">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!--preload a la primera imagen-->
+    <link rel="preload" href="img/blog1.jpg" as="image">
+
 </head>
 <body>
     
@@ -38,7 +51,13 @@
             <h3>Nuestro Blog</h3>
             <article class="entrada">
                 <div class="entrada__imagen">
-                    <img src="img/blog1.jpg" alt="imagen blog">
+                    
+                    <picture>
+                        <source loading="lazy" srcset="img/blog1.webp" type="image/webp">
+                        <!--Con loading:lazy nos permitira que en la pagina al llegar a ese elemento lo descargara para una mayor fluidez-->
+                        <img loading="lazy" src="img/blog1.jpg" alt="imagen blog"> 
+                    </picture>
+                    
                 </div>
 
                 <div class="entrada__contenido">
@@ -50,7 +69,12 @@
 
             <article class="entrada">
                 <div class="entrada__imagen">
-                    <img src="img/blog2.jpg" alt="imagen blog">
+                    <!--Sirve para cargar imagenes con el formato webp-->
+                    <picture>
+                        <source loading="lazy" srcset="img/blog2.webp" type="image/webp">
+                        <!--Con loading:lazy nos permitira que en la pagina al llegar a ese elemento lo descargara para una mayor fluidez-->
+                        <img loading="lazy" src="img/blog2.jpg" alt="imagen blog"> 
+                    </picture>
                 </div>
 
                 <div class="entrada__contenido">
@@ -62,7 +86,12 @@
 
             <article class="entrada">
                 <div class="entrada__imagen">
-                    <img src="img/blog3.jpg" alt="imagen blog">
+                    <!--Sirve para cargar imagenes con el formato webp-->
+                    <picture>
+                        <source loading="lazy" srcset="img/blog3.webp" type="image/webp">
+                        <!--Con loading:lazy nos permitira que en la pagina al llegar a ese elemento lo descargara para una mayor fluidez-->
+                        <img loading="lazy" src="img/blog3.jpg" alt="imagen blog"> 
+                    </picture>
                 </div>
 
                 <div class="entrada__contenido">
@@ -115,5 +144,8 @@
             </div>
         </div>
     </footer>
+
+    <!--Con esto cargamos lo que es Modernizr para las imagenes webp que se encuentren en css-->
+    <script src="js/modernizr.js"></script>
 </body>
 </html>

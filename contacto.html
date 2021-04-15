@@ -34,19 +34,30 @@
     </header>
 
     <main class="contenedor">
-        <h3 class="centrar-texto">Sobre Nosotros</h3>
+        <h3 class="centrar-texto">Contacto</h3>
 
-        <div class="sobre-nosotros">
-            <div class="sobre-nosotros__imagen">
-                <img src="img/nosotros.jpg" alt="imagen nosotros">
+        <div class="contacto-bg"></div>
+        
+        <form class="formulario">
+            <div class="campo">
+                <label class="campo__label" for="nombre">Nombre</label>
+                <input class="campo__field" type="text" placeholder="Tu Nombre" id="nombre">
+            </div>
+            <div class="campo">
+                <label class="campo__label" for="email">E-mail</label>
+                <input class="campo__field" type="email" placeholder="Tu correo" id="email">
+            </div>
+            <div class="campo">
+                <label class="campo__label" for="Mensaje">Mensaje</label>
+                <textarea class="campo__field campo__field--textarea" id="Mensaje"></textarea>
             </div>
 
-            <div class="sobre-nosotros__texto">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque ullamcorper purus eu ultricies. In malesuada condimentum ligula, fringilla fermentum lorem semper eu. Maecenas consectetur lobortis scelerisque. Curabitur pulvinar metus ac neque posuere, eget egestas velit suscipit. Etiam egestas quis nunc a finibus. Etiam ac purus vitae nibh tempus ornare et at ante. Nulla facilisi.</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque ullamcorper purus eu ultricies. In malesuada condimentum ligula, fringilla fermentum lorem semper eu. Maecenas consectetur lobortis scelerisque. Curabitur pulvinar metus ac neque posuere, eget egestas velit suscipit. Etiam egestas quis nunc a finibus. Etiam ac purus vitae nibh tempus ornare et at ante. Nulla facilisi.</p>
+            <div class="campo">
+                <input type="submit" value="Enviar" class="boton boton--primario">
             </div>
-        </div>
+        </form>
+        
+        
     </main>
 
     <footer class="footer">
