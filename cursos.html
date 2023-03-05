@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
     <title>BlogDeCafe</title>
+    
+    <!-- Prefetch --> 
+    <link rel="Prefetch" href="entrada.html" as="document"> <!-- Permite cargar la siguiente pagina de manera mas rapida dependiendo la necesidad que le demos al cliente -->
+
+    <!-- Preload -->
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+    
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" crossorigin="crossorigin" as="font">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+    
 </head>
 <body>
     
@@ -38,7 +49,10 @@
 
         <div class="curso"> <!--Inicio de curso-->
             <div class="curso__imagen">
-                <img src="img/curso1.jpg" alt="imagen del curso">
+                <picture>
+                    <source loading="lazy" srcset="img/curso1.webp" type="image/webp">
+                    <img loading="lazy" src="img/curso1.jpg" alt="imagen del curso">
+                </picture>
             </div>
 
             <div class="curso__informacion">
